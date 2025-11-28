@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+
+<!-- KOMPLETTE INDEX.HTML -->
+<!--  -->
+
+
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Würfelsystem</title>
+
+    <!-- FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+	<!-- CSS -->
+	    <link rel="stylesheet" href="style_v5.css">
+
+</head>
+
+
+
+
+<body>
+
+
+
+	<!-- Spielfeld: Stapel & Karten -->
+
+	<div class="spielfeld">
+
+		<!-- Stapel -->
+		<div class="stapel-container">
+			<div class="stapel">STAPEL</div>
+		</div>
+
+
+		<!-- KARTEN & WÜRFEL MIT BUTTONS -->
+		<!-- weil sonst Karten nicht mittig zu Würfeln ;-; -->
+
+		<div class="haupt-container">
+		
+			<!-- Karten -->
+			<!-- später: Platz für Würfelangabe darunter  -->
+			<div class="karten-container">
+				<div class="karten" id="gegner1">GEGNER 1 </div>
+				<div class="karten" id="gegner2">GEGNER 2 </div>
+				<div class="karten" id="gegner3">GEGNER 3 </div>
+				<div class="karten" id="gegner4">GEGENER 4 </div>
+			</div>
+	
+		
+		    <!-- Container der 5 Würfel -->
+		    <div class="wuerfel-container">
+		        <div class="wuerfel" id="wuerfel1"></div>
+		        <div class="wuerfel" id="wuerfel2"></div>
+				  <div class="wuerfel" id="wuerfel3"></div>
+				  <div class="wuerfel" id="wuerfel4"></div>
+				  <div class="wuerfel" id="wuerfel5"></div>
+		    </div> 
+
+			 <!-- Buttons -->
+		    <button class="wuerfel-button" id="wuerfeln">Würfeln</button>
+			 <button class="wuerfel-button" id="passen">Passen</button>
+
+		 </div>
+
+			<!-- Stapel aber leer -->
+			<!-- nur damit haupt-container mittig – gecheated, aber egal lolol -->
+		<div class="leer-container">
+			<div class="leer"></div>
+		</div>
+
+	
+	 </div>
+	 
+
+	
+
+	 <!-- JS -->
+	 <script src="wuerfel_v5.js"></script>
+	 <script src="runde_v5.js"></script>
+	 <script src="angriff_v5.js"></script>
+	 <script src="main_v5.js"></script>
+
+	 
+
+
+</body>
+</html>

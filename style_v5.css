@@ -1,0 +1,343 @@
+
+/* ************************************************
+							ALLGEMEIN
+   ************************************************ */
+
+/* COLOR PALETTE
+	- BG 						#0a0f0a
+	- text 					#d8e8d8 oder 
+	- text:hover			#
+	- borders 				#
+	- borders:hover		#
+	- fill 					#
+
+*/
+
+
+	
+body {
+
+	 display: flex;						/* ÄNDERN? weil sonst links abgeschnitten 
+	 											- um alles zentriert zu haben, mach lieber extra 
+												wrapper außen herum!! bzw. nutze spielfeld dafür?*/
+												/* oder so lassen – Stapel eh nicht wichtig lolol */
+    flex-direction: column;
+    align-items: center;				/* WAIT! oder hier center weg!! dann overflow-x workable*/
+    justify-content: center;
+
+    height: 100vh;				/* evtl anpassen */
+    margin: 0;						/* evtl anpassen */
+	 
+    background: #0a0f0a;
+
+    font-family: 'VT323', monospace;
+    color: #d8e8d8;	
+}
+
+
+
+
+
+
+/* ************************************************
+   			SPIELFELD: STAPEL & KARTEN
+   ************************************************ */
+
+.spielfeld {
+
+	display: flex;
+	justify-content: center; /* evtl. center?? */
+   /*align-items: center;  ne, nicht mehr, sonst Stapel auch vertikal-mittig */ 
+	position: relative;  /* nötig? */
+	
+	width: max-content;
+}
+
+
+
+/* TEST TEST */
+.spielfeld {
+
+	border: 2px solid #6495ED; /* BLAU */
+
+}
+
+
+
+
+/* ************************************************
+   			SPIELFELD: STAPEL & LEER
+   ************************************************ */
+
+
+.stapel-container {
+    display: flex;
+	 margin-right: 30px;
+}
+
+
+.stapel {
+	position: relative; /* evtl. abändern, damit ES NICHT AUS DEM SCREEN FLUTSCHT???*/
+	
+	width: 200px;
+	height: 300px;
+
+	background: #141914d9;
+	border: 2px solid #4a7a4a4d;
+	border-radius: 8px;
+	box-shadow: 0 0 12px #000000cc, 0 0 6px #4a7a4a66 inset;
+
+}
+
+
+/* Um Hauptcontainer mittig zu haben*/
+.leer-container {
+    display: flex;
+
+	 margin-left: 30px;
+}
+
+
+
+
+.leer {
+	visibility: hidden;
+	position: relative; /* evtl. abändern, damit ES NICHT AUS DEM SCREEN FLUTSCHT???*/
+	
+	width: 200px;
+	height: 300px;
+
+	background: #141914d9;
+	border: 2px solid #4a7a4a4d;
+	border-radius: 8px;
+	box-shadow: 0 0 12px #000000cc, 0 0 6px #4a7a4a66 inset;
+
+}
+
+
+
+
+/* FÜR TEST */
+.stapel-container {
+
+	border: 2px solid #BA55D3; /* PINK links */
+
+}
+
+
+.leer-container {
+
+	 border: 2px solid #BA55D3; /* PINK rechts */
+}
+
+
+
+
+/* ************************************************
+   			SPIELFELD: KARTEN
+   ************************************************ */
+
+
+
+.haupt-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/*gap: px;  /* skip, Abstand lieber einzeln/separat bei .karten und sooo*/
+
+	border: 2px solid #FF0000; /* für Test */
+
+	padding-left: 10px;
+	padding-right: 10px;
+
+	width: 80%; /* gecheated, aber egal – so wenigstens mittig*/
+	
+}
+
+
+/* FÜR TEST */
+.haupt-container {
+
+	border: 2px solid #228B22; /* GRÜN */
+	
+}
+
+
+
+.karten-container {
+   display: flex;
+   gap: 25px;				/* Abstand zwischen Karten */
+	margin-bottom: 20px;	/**/
+
+	border: 2px solid #FF0000; /* für Test */
+}
+
+
+
+.karten {
+    width: 200px;
+    height: 300px;
+	 		/* Abstand Würfel */
+
+    background: #141914d9;
+    border: 2px solid #4a7a4a4d;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #000000cc, 0 0 6px #4a7a4a66 inset;
+
+	 
+}
+
+
+
+
+/* NEU NEU NEU ZWI ZWI WZI */
+/* Auswahl-Karten */
+
+.karten:hover {
+  cursor: pointer;
+  box-shadow: 0 0 8px #4a7a4a4d; 
+  transform: scale(1.05); /* zoom */
+}
+
+.karten {
+  transition: all 0.3s ease; /* zoom-pace: 0.2? oder 0.3? */
+}
+
+
+
+
+
+
+
+/* ************************************************
+   					PLAYER WÜRFEL
+   ************************************************ */
+
+/* Container der 5 Würfel */
+.wuerfel-container {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+
+
+.wuerfel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	 position: relative;
+	 
+	 width: 60px;
+    height: 60px;
+
+    background: #141914d9;
+    border: 1px solid #4a7a4a4d;
+    border-radius: 12px;
+    box-shadow: 0 0 12px #000000cc, 0 0 6px #4a7a4a66 inset;  /* HATTEN WIR SONST AUCH INSET??? VERGLEICHE*/
+
+	 /* Klickbar für Würfelauswahl*/
+	 cursor: pointer;
+    transition: 0.2s ease;
+
+}
+
+
+/* Design wenn gelocked */
+
+.wuerfel.locked {
+
+    opacity: 0.6;
+    border-color: #6aff6a;
+    box-shadow: 0 0 10px #6aff6a88 inset, 0 0 6px #6aff6a55;
+
+	 /*filter: grayscale(90%);*/  /* LIEBER FÜR WENN GEGNER LOCKED !!!*/ 
+	 
+}
+
+
+
+
+/* ************************************************
+   						WÜRFELAUGEN
+   ************************************************ */
+
+/* Design */
+.wuerfel .auge {
+	 position: absolute;
+	 
+    width: 10px;
+    height: 10px;
+	 
+    background: #98b598;  /* #6aff6a*/
+    border-radius: 100%;
+    box-shadow: 0 0 8px #6aff6a, 0 0 4px #6aff6a inset;
+    
+}
+
+
+
+/* Augen-Position */
+
+.a1 { top: 20%; left: 20%; }			/* Oben-Links - Auge 1 */
+.a2 { top: 20%; right: 20%; }			/* Oben-Rechts - Auge 2 */
+
+
+.a3 { top: 50%; left: 20%; transform: translateY(-50%); } 			/* Mitte-Links Auge 3 */
+.a4 { top: 50%; left: 50%; transform: translate(-50%, -50%); } 	/* Mitte-Mitte Auge 4  */
+.a5 { top: 50%; right: 20%; transform: translateY(-50%); } 			/* Mitte-Rechts Auge 5  */
+
+/* geht hier auch ohne translate???*/
+
+
+.a6 { bottom: 20%; left: 20%; }		/* Unten-Links - Auge 6 */
+.a7 { bottom: 20%; right: 20%; }		/* Unten-Rechts - Auge 7 */
+
+
+
+
+
+/* ************************************************
+   					WÜRFEL-BUTTON
+   ************************************************ */
+.wuerfel-button {
+    position: relative;
+	 
+    width: 150px;
+    height: 55px;
+	 
+    background: #0a0f0a99;
+    border: 1px solid #4a7a4a4d;
+
+	 font-family: 'VT323', monospace;
+    color: #98b598;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+	 /* Klickbar für Würfeln */
+    cursor: pointer;
+	 transition: 0.2s ease;
+
+    
+
+}
+
+
+
+/* Button-Zuschnitt wie bei Menu-Button -- Same oder weg?? */
+.wuerfel-button {
+clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+}
+
+
+
+
+.wuerfel-button:hover {
+    border-color: #4a7a4a;
+    color: #6a9a6a;
+    box-shadow: 0 0 8px #4a7a4a55;
+    transform: scale(1.05);
+}
+
+
