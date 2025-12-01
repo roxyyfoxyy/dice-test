@@ -68,6 +68,7 @@ body {
 	position: relative;  /* nötig? */
 	
 	width: max-content;
+
 }
 
 
@@ -125,10 +126,11 @@ body {
 
 
 /* ************************************************
-   			SPIELFELD: GEGNERKARTEN
+   			SPIELFELD: INTERACTIVE PART
    ************************************************ */
 
 
+/*** Gegner + User-Würfel + Buttons ***/
 .haupt-container {
 	display: flex;
 	flex-direction: column;
@@ -144,21 +146,25 @@ body {
 
 
 
-.karten-container {
-   display: flex;
-   gap: 25px;				/* Abstand zwischen Karten */
+
+/*** Gegnerkarte-ALLE + Gegnerwürfel ***/
+.gegner-container {
+	display: flex;
+	gap: 25px;				/* Abstand zwischen Karten */
 	margin-bottom: 20px;	/* space to User-Würfel -> später space to Gegnerwürfel*/
+
 }
 
 
+/*** Karten-Design ***/
 .karten {
-   width: 200px;
-   height: 300px;
+	width: 200px;
+	height: 300px;
 
 	background: #141914d9;
-   border: 2px solid #4a7a4a4d;
-   border-radius: 8px;
-   box-shadow: 0 0 12px #000000cc, 0 0 6px #4a7a4a4d inset;
+	border: 2px solid #4a7a4a4d;
+	border-radius: 8px;
+	box-shadow: 0 0 12px #000000cc, 0 0 6px #4a7a4a4d inset;
 }
 
 
@@ -177,12 +183,45 @@ body {
 
 
 
+/*** Gegnerkarte-SINGLE + Gegnerwürfel ***/
+.single-container {
+	display: flex;
+	flex-direction: column;
+
+	gap: 10px;
+	margin-bottom: 30px;
+
+}
+
+
+/*** Gegnerwürfel ***/
+.gw-container {
+    display: flex;
+    gap: 10px;   
+    justify-content: center;
+
+}
+
+/*** Gegnerwürfel-Design ***/
+.gegner-wuerfel {
+	width: 40px;
+	height: 40px;
+
+    background: #141914d9;
+    border: 1px solid #4a7a4a4d;
+    border-radius: 8px;
+    box-shadow: 0 0 12px #000000cc, 0 0 6px #4a7a4a4d inset;
+
+}
+
+
+
 
 
 
 
 /* ************************************************
-   					PLAYER WÜRFEL
+   					USER WÜRFEL
    ************************************************ */
 
 .wuerfel-container {
@@ -197,9 +236,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-	 position: relative;
+	position: relative;
 	 
-	 width: 60px;
+	width: 60px;
     height: 60px;
 
     background: #141914d9;
@@ -211,7 +250,7 @@ body {
 
 /* "Klickbar" für Würfelauswahl*/
 .wuerfel {
-	 cursor: pointer;
+	cursor: pointer;
     transition: 0.2s ease;
 }
 
@@ -236,7 +275,7 @@ body {
 
 /* Design */
 .wuerfel .auge {
-	 position: absolute;
+	position: absolute;
 	 
     width: 10px;
     height: 10px;
@@ -341,8 +380,11 @@ clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100
 
 
 .karten-container {
-
 	border: 2px solid #FF0000; 
+}
+
+.single-karten {
+	border: 1px solid #fff;
 }
 
 
@@ -350,8 +392,8 @@ clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100
 	border: 2px solid #FF0000; 
 }
 
-
 */
+
 
 
 /*
@@ -360,6 +402,7 @@ PINK (links)
 PINK (rechts)
 GRÜN
 ROT
+WEIß
 ROT 
 */
 
