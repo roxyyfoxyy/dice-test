@@ -1,0 +1,163 @@
+
+/* ************************************************
+					ALLGEMEIN
+   ************************************************ */
+
+/* COLOR PALETTE
+	- BG 							#0a0f0a
+	- text 							#98b598
+
+	- borders 						#4a7a4a4d			//same bei kartenhover (border + shadow) && button
+	- border shadow out				#000000cc			//dark, für "hervorgehoben"-Effekt
+	- border shadow in				#4a7a4a4d			//green wie border, für "cyber"-Effekt
+
+	- fill 							#141914d9
+	- fill button					#0a0f0a
+
+
+EINZELOPFER
+	- augen							#98b598
+	- augen shadow					#6aff6a 			//für besseren glow (oder #6aff6a55 - naah, more GLOW)
+
+	- border wuerfel:lock			#98b598 			//(augen) oder #4a7a4a (button-rand fav!) oder #6aff6a (falls leuchtender)
+	- shadow out					#6aff6a55 			//(oder #4a7a4a4d - naah)
+	- shadow in						#4a7a4a4d 			//oder #6aff6a88 falls leuchtender
+	
+	- border + text button:hover	#4a7a4a 			//so leuchtender (bloß nicht auch 6aff6a.. zuuu viel glow xD)
+
+*/
+
+
+
+
+/* ************************************************
+   		SPIELFELD: GRUNDGERÜST GEGNER
+   ************************************************ */
+
+.gegner-container {
+	display: flex;
+	gap: 25px;				/* Abstand zwischen Karten */
+	margin-bottom: 20px;	/* space to User-Würfel -> später space to Gegnerwürfel*/
+
+}
+
+
+/* ************************************************
+   		SPIELFELD: DESIGN GEGNERKARTEN
+   ************************************************ */
+
+
+/*** Karten-Design ***/
+.karten {
+	width: 200px;
+	height: 300px;
+
+	background: #141914d9;
+	border: 2px solid #4a7a4a4d;
+	border-radius: 8px;
+	box-shadow: 0 0 12px #000000cc, 0 0 6px #4a7a4a4d inset;
+}
+
+
+/*** "Klickbar" + Zoom-Hover ***/
+.karten {
+	cursor: pointer;
+	transition: all 0.3s ease; /* zoom-pace: 0.2? oder 0.3? */
+}
+
+
+.karten:hover {
+	box-shadow: 0 0 8px #4a7a4a4d; 
+  
+	transform: scale(1.05);
+}
+
+
+
+/* ************************************************
+   			SPIELFELD: KARTE INKL. WÜRFEL
+   ************************************************ */
+
+/*** Gegnerkarte-SINGLE inkl. Gegnerwürfel ***/
+.single-container {
+	display: flex;
+	flex-direction: column;
+
+	gap: 10px;
+	margin-bottom: 30px;
+
+}
+
+
+/*** nur Gegnerwürfel ***/
+.gw-container {
+    display: flex;
+    gap: 10px;   
+    justify-content: center;
+
+}
+
+/*** Gegnerwürfel-Design ***/
+.gegner-wuerfel {
+	width: 40px;
+	height: 40px;
+
+    background: #141914d9;
+    border: 1px solid #4a7a4a4d;
+    border-radius: 8px;
+    box-shadow: 0 0 12px #000000cc, 0 0 6px #4a7a4a4d inset;
+
+}
+
+
+
+
+
+
+
+/* ************************************************
+   						TEST TEST
+   ************************************************ */
+
+/*
+
+.haupt-container {
+	border: 2px solid #228B22; 
+}
+
+.gegner-container {
+	border: 2px solid #8b224e; 
+}
+
+.single-container {
+	border: 2px solid #FF0000; 
+}
+
+.karten {
+	border: 1px solid #fff;
+}
+
+.gw-container {
+	border: 2px solid #22298b; 
+}
+
+
+*/
+
+
+
+/*
+BLAU
+PINK (links)
+PINK (rechts)
+GRÜN
+ROT
+WEIß
+ROT 
+*/
+
+
+
+
+
+

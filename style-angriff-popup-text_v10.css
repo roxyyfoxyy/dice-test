@@ -1,0 +1,95 @@
+
+/* ************************************************
+					ALLGEMEIN
+   ************************************************ */
+
+/* COLOR PALETTE
+	- BG 							#0a0f0a
+	- text 							#98b598
+
+	- borders 						#4a7a4a4d			//same bei kartenhover (border + shadow) && button
+	- border shadow out				#000000cc			//dark, für "hervorgehoben"-Effekt
+	- border shadow in				#4a7a4a4d			//green wie border, für "cyber"-Effekt
+
+	- fill 							#141914d9
+	- fill button					#0a0f0a
+
+
+EINZELOPFER
+	- augen							#98b598
+	- augen shadow					#6aff6a 			//für besseren glow (oder #6aff6a55 - naah, more GLOW)
+
+	- border wuerfel:lock			#98b598 			//(augen) oder #4a7a4a (button-rand fav!) oder #6aff6a (falls leuchtender)
+	- shadow out					#6aff6a55 			//(oder #4a7a4a4d - naah)
+	- shadow in						#4a7a4a4d 			//oder #6aff6a88 falls leuchtender
+	
+	- border + text button:hover	#4a7a4a 			//so leuchtender (bloß nicht auch 6aff6a.. zuuu viel glow xD)
+
+*/
+
+
+
+/* ************************************************
+   	    ANGRIFF: ERFOLG/MISSERFOLG-TEXT-POPUP
+   ************************************************ */
+
+/*** Design Text ***/
+.popup-angriff {
+
+	position: absolute;
+  	top: 0%;
+	
+	transform: translateY(40px);
+	pointer-events: none;
+
+	/* Font wie Button-Text (bigger)*/
+	font-family: 'VT323', monospace;
+    color: #98b598;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* oder 2px? */
+
+}
+
+/*** Pop-Up Animation ***/
+.popup-angriff.animation {
+
+	animation-name: popup;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; /* damit ani im state von last frame bleibt & net zurückspringt */
+
+}
+
+/* Movement/Animation-Frames (über %)*/
+@keyframes popup {
+
+	/* Startposition */
+	0% {
+		opacity: 0;
+    	transform: translateY(-50px);
+	}
+
+	/* Pop-up */
+	1% {
+		opacity: 1;
+		transform: translateY(-50px);
+	}
+
+	/* Movement up */
+	70% {
+    	opacity: 1;
+    	transform: translateY(-120px);
+	}
+
+	/* Verblasse between 70-100 - aber STAY wie bei 70% (nicht back to bottom) */
+	100% {
+    	opacity: 0;
+    	transform: translateY(-120px);
+	}
+}
+
+
+
+
+
+
