@@ -31,6 +31,12 @@
             // String wieder umwandeln in Objekt
             const parsed = JSON.parse(saved);
 
+            // Wenn Gameover, dann Abbruch
+            if (parsed.gameOver) {
+                localStorage.removeItem("gameState");
+                return;         // abbrechen -> alias "new Game"
+            }
+
             // Ins gameState.js schreiben
             // wenn parsed.xx undefiniert o. null, dann Wert rechts nehmen stattdessen
             gameState.punkte = parsed.punkte ?? 0;
