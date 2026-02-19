@@ -1,0 +1,54 @@
+
+
+
+/* ************************************************
+   		SPIELFELD: GRUNDGERÜST INTERACTIVE PART
+   ************************************************ */
+
+
+/*** Gegner + User-Würfel + Buttons ***/
+.haupt-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/*gap: px;  /* skip, Abstand lieber einzeln/separat bei .karten und sooo*/
+
+	padding-left: 10px;
+	padding-right: 10px;
+
+	width: 80%; 			/* gecheated, aber egal – so wenigstens mittig*/ /* still needed? evtl. delete*/
+	
+}
+
+
+
+/* ************************************************
+   						TEST TEST
+   ************************************************ */
+
+/*
+
+.haupt-container {
+	border: 2px solid #228B22; 
+}
+
+*/
+
+
+
+
+/*
+BLAU
+PINK (links)
+PINK (rechts)
+GRÜN
+ROT
+WEIß
+ROT 
+*/
+
+
+
+
+
+
