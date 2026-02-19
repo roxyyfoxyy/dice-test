@@ -28,7 +28,4 @@ function triggerGameOver() {
     wuerfelnButton.disabled = true; //disabled net!! FIXEN
     passenButton.disabled = true;
 
-
-    localStorage.removeItem("gameState");
-    location.reload();
 }
